@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CyberLink Nairobi - Your go-to cyber cafe for government services, academic services, and more. Visit us today!">
+    <meta name="keywords" content="cybercafe, Nairobi, KRA services, HELB applications, online services, printing, scanning, Kenya">
+    <meta name="author" content="CyberLink Nairobi">
+    <title>CyberLink Nairobi | Premier Cyber Cafe in Nairobi, Kenya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #ff6b35;
+            --background-color: #f5f5f5;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .main-nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .main-nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        .main-nav ul li a {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .main-nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            background-color: #e1f5fe;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e65b2e;
+            color: var(--white);
+        }
+
+        /* Services Section Styles */
+        .services {
+            background-color: var(--white);
+            padding: 4rem 0;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background-color: #fff3e0;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section Styles */
+        .contact {
+            background-color: var(--background-color);
+            padding: 4rem 0;
+        }
+
+        .contact-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .contact-form {
+            flex: 2;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #1565c0;
+        }
+
+        .contact-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            color: var(--white);
+            border-radius: 5px;
+            font-weight: 600;
+            text-align: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .call-now {
+            background-color: #4CAF50;
+        }
+
+        .whatsapp {
+            background-color: #25D366;
+        }
+
+        .contact-btn:hover {
+            opacity: 0.9;
+            color: var(--white);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .social-media {
+            margin-top: 1rem;
+        }
+
+        .social-media a {
+            margin: 0 0.5rem;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+            }
+
+            .main-nav {
+                margin-top: 1rem;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .main-nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-wrapper {
+                flex-direction: column;
+            }
+
+            .contact-form,
+            .contact-info {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-laptop"></i> CyberLink Nairobi</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+                    <li><a href="mailto:polycaponline@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="#store"><i class="fas fa-store"></i> Online Store</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Welcome to CyberLink Nairobi</h2>
+                <p>Your one-stop solution for all cyber services in Nairobi.</p>
+                <a href="#services" class="cta-button">Explore Our Services</a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <i class="fas fa-balance-scale fa-3x"></i>
+                        <h3>Government Services</h3>
+                        <p>Get assistance with KRA, HELB applications, eCitizen services, and more.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-graduation-cap fa-3x"></i>
+                        <h3>Academic Services</h3>
+                        <p>Apply for scholarships, register for university, and more.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-plane-departure fa-3x"></i>
+                        <h3>Travel & Visa Applications</h3>
+                        <p>We assist with visa applications, travel bookings, and document processing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-wrapper">
+                    <form id="contact-form" class="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                    <div class="contact-info">
+                        <p><strong>Address:</strong> Kayole, Nairobi, Kenya</p>
+                        <p><strong>Email:</strong> cyberlinknairobi@example.com</p>
+                        <p><strong>Phone:</strong> +254 711 222 333</p>
+                        <a href="tel:+254711222333" class="contact-btn call-now">Call Us Now</a>
+                        <a href="https://wa.me/254711222333" class="contact-btn whatsapp">WhatsApp Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© <span id="current-year"></span> CyberLink Nairobi. All rights reserved.</p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+
+            // Form submission handler
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // Simple form validation
+                    const name = this.querySelector('input[name="name"]').value.trim();
+                    const email = this.querySelector('input[name="email"]').value.trim();
+                    const message = this.querySelector('textarea[name="message"]').value.trim();
+
+                    if (name && email && message) {
+                        // Here you would typically send the form data to a server
+                        // For this example, we'll just show a success message
+                        showNotification('Thank you for contacting us. We will get back to you soon!', 'success');
+                        this.reset(); // Clear the form
+                    } else {
+                        showNotification('Please fill out all fields.', 'error');
+                    }
+                });
+            }
+
+            // Service card hover effect
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // Dynamic copyright year
+            const currentYear = new Date().getFullYear();
+            const copyrightElement = document.querySelector('footer p');
+            if (copyrightElement) {
+                copyrightElement.textContent = `© ${currentYear} CyberLink Nairobi. All rights reserved.`;
+            }
+
+            // Notification function
+            function showNotification(message, type) {
+                const notification = document.createElement('div');
+                notification.textContent = message;
+                notification.className = `notification ${type}`;
+                document.body.appendChild(notification);
+
+                // Style the notification
+                Object.assign(notification.style, {
+                    position: 'fixed',
+                    top: '20px',
+                    right: '20px',
+                    padding: '10px 20px',
+                    borderRadius: '5px',
+                    color: 'white',
+                    fontWeight: 'bold',
+                    zIndex: 1000,
+                    opacity: 0,
+                    transition: 'opacity 0.3s ease'
+                });
+
+                if (type === 'success') {
+                    notification.style.backgroundColor = '#4CAF50';
+                } else if (type === 'error') {
+                    notification.style.backgroundColor = '#f44336';
+                }
+
+                // Fade in
+                setTimeout(() => {
+                    notification.style.opacity = 1;
+                }, 10);
+
+                // Remove the notification after 3 seconds
+                setTimeout(() => {
+                    notification.style.opacity = 0;
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
