@@ -8,7 +8,6 @@
     <meta name="author" content="CyberLink Nairobi">
     <title>CyberLink Nairobi | Premier Cyber Cafe in Nairobi, Kenya</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
         /* Global Styles */
         :root {
@@ -70,9 +69,39 @@
             align-items: center;
         }
 
+        .nav-toggle {
+            display: none; /* Hide toggle button by default */
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            order: -1; /* Move toggle button to the left */
+        }
+
+        .logo {
+            text-align: center; /* Center the logo */
+            flex: 1; /* Allow logo to take available space */
+        }
+
         .logo h1 {
             font-size: 1.5rem;
             color: var(--white);
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: flex-end; /* Align close button to the right */
+        }
+
+        .close-btn {
+            display: none; /* Hide close button by default */
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-right: 1rem;
         }
 
         .main-nav ul {
@@ -248,16 +277,36 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .header .container {
-                flex-direction: column;
+                flex-direction: row; /* Change to row layout on small screens */
+            }
+
+            .nav-toggle {
+                display: block; /* Show toggle button on small screens */
             }
 
             .main-nav {
-                margin-top: 1rem;
+                display: none; /* Hide main nav by default */
+                flex-direction: column;
+                width: 100%;
+                background-color: var(--primary-color);
+                position: absolute;
+                top: 60px; /* Adjust according to header height */
+                left: 0;
+                z-index: 999;
+            }
+
+            .main-nav.active {
+                display: flex; /* Show nav when active */
+            }
+
+            .close-btn {
+                display: block; /* Show close button on small screens */
             }
 
             .main-nav ul {
                 flex-direction: column;
                 align-items: center;
+                padding: 1rem 0;
             }
 
             .main-nav ul li {
@@ -282,178 +331,110 @@
 <body>
     <header class="header">
         <div class="container">
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="logo">
                 <h1><i class="fas fa-laptop"></i> CyberLink Nairobi</h1>
             </div>
             <nav class="main-nav">
+                <button class="close-btn" aria-label="Close navigation">
+                    <i class="fas fa-times"></i>
+                </button>
                 <ul>
-                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
-                    <li><a href="mailto:polycaponline@gmail.com"><i class="fas fa-envelope"></i> Contact</a></li>
-                    <li><a href="#store"><i class="fas fa-store"></i> Online Store</a></li>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <h2>Welcome to CyberLink Nairobi</h2>
-                <p>Your one-stop solution for all cyber services in Nairobi.</p>
-                <a href="#services" class="cta-button">Explore Our Services</a>
-            </div>
-        </section>
+    <section class="hero" id="hero">
+        <div class="container">
+            <h2>Welcome to CyberLink Nairobi</h2>
+            <p>Your go-to cyber cafe for all your online needs!</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
 
-        <section id="services" class="services">
-            <div class="container">
-                <h2>Our Services</h2>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <i class="fas fa-balance-scale fa-3x"></i>
-                        <h3>Government Services</h3>
-                        <p>Get assistance with KRA, HELB applications, eCitizen services, and more.</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-graduation-cap fa-3x"></i>
-                        <h3>Academic Services</h3>
-                        <p>Apply for scholarships, register for university, and more.</p>
-                    </div>
-                    <div class="service-card">
-                        <i class="fas fa-plane-departure fa-3x"></i>
-                        <h3>Travel & Visa Applications</h3>
-                        <p>We assist with visa applications, travel bookings, and document processing.</p>
-                    </div>
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-file-alt fa-2x"></i>
+                    <h3>Government Services</h3>
+                    <p>Access and process various government services with ease.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-graduation-cap fa-2x"></i>
+                    <h3>Academic Services</h3>
+                    <p>Apply for scholarships, universities, and more.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-print fa-2x"></i>
+                    <h3>Printing & Scanning</h3>
+                    <p>High-quality printing and scanning services available.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-credit-card fa-2x"></i>
+                    <h3>Mobile & Utility Payments</h3>
+                    <p>Pay your utility bills and mobile top-ups with convenience.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="contact">
-            <div class="container">
+    <section class="contact" id="contact">
+        <div class="container contact-wrapper">
+            <div class="contact-form">
                 <h2>Contact Us</h2>
-                <div class="contact-wrapper">
-                    <form id="contact-form" class="contact-form">
-                        <input type="text" name="name" placeholder="Your Name ie Austin" required>
-                        <input type="email" name="email" placeholder="Your Email ie ...@gmail.com" required>
-                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
-                    <div class="contact-info">
-                        <p><strong>Address:</strong> Kayole, Nairobi, Kenya</p>
-                        <p><strong>Email:</strong> polycaponline@gmail.com</p>
-                        <p><strong>Phone:</strong> +254 114 070 477</p>
-                        <a href="tel:+254114070477" class="contact-btn call-now">Call Us Now</a>
-                        <a href="https://wa.link/geuv49" class="contact-btn whatsapp">WhatsApp Us</a>
-                    </div>
-                </div>
+                <form action="#">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
             </div>
-        </section>
-    </main>
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Visit us at:</p>
+                <address>
+                    CyberLink Nairobi, <br>
+                    Nairobi, Kenya
+                </address>
+                <a href="tel:+2540114070477" class="contact-btn call-now"><i class="fas fa-phone-alt"></i> Call Now</a>
+                <a href="https://wa.me/254737739797" class="contact-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
-            <p>© <span id="current-year"></span> CyberLink Nairobi. All rights reserved.</p>
+            <p>&copy; 2024 CyberLink Nairobi. All Rights Reserved.</p>
             <div class="social-media">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Wait for the DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for navigation links
-            const navLinks = document.querySelectorAll('nav a[href^="#"]');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                });
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            const closeBtn = document.querySelector('.close-btn');
+
+            navToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
             });
 
-            // Form submission handler
-            const contactForm = document.getElementById('contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    // Simple form validation
-                    const name = this.querySelector('input[name="name"]').value.trim();
-                    const email = this.querySelector('input[name="email"]').value.trim();
-                    const message = this.querySelector('textarea[name="message"]').value.trim();
-
-                    if (name && email && message) {
-                        // Here you would typically send the form data to a server
-                        // For this example, we'll just show a success message
-                        showNotification('Thank you for contacting us. We will get back to you soon!', 'success');
-                        this.reset(); // Clear the form
-                    } else {
-                        showNotification('Please fill out all fields.', 'error');
-                    }
-                });
-            }
-
-            // Service card hover effect
-            const serviceCards = document.querySelectorAll('.service-card');
-            serviceCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.05)';
-                });
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                });
+            closeBtn.addEventListener('click', function() {
+                mainNav.classList.remove('active');
             });
-
-            // Dynamic copyright year
-            const currentYear = new Date().getFullYear();
-            const copyrightElement = document.querySelector('footer p');
-            if (copyrightElement) {
-                copyrightElement.textContent = `© ${currentYear} CyberLink Nairobi. All rights reserved.`;
-            }
-
-            // Notification function
-            function showNotification(message, type) {
-                const notification = document.createElement('div');
-                notification.textContent = message;
-                notification.className = `notification ${type}`;
-                document.body.appendChild(notification);
-
-                // Style the notification
-                Object.assign(notification.style, {
-                    position: 'fixed',
-                    top: '20px',
-                    right: '20px',
-                    padding: '10px 20px',
-                    borderRadius: '5px',
-                    color: 'white',
-                    fontWeight: 'bold',
-                    zIndex: 1000,
-                    opacity: 0,
-                    transition: 'opacity 0.3s ease'
-                });
-
-                if (type === 'success') {
-                    notification.style.backgroundColor = '#4CAF50';
-                } else if (type === 'error') {
-                    notification.style.backgroundColor = '#f44336';
-                }
-
-                // Fade in
-                setTimeout(() => {
-                    notification.style.opacity = 1;
-                }, 10);
-
-                // Remove the notification after 3 seconds
-                setTimeout(() => {
-                    notification.style.opacity = 0;
-                    setTimeout(() => {
-                        document.body.removeChild(notification);
-                    }, 300);
-                }, 3000);
-            }
         });
     </script>
 </body>
