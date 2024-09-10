@@ -357,13 +357,13 @@
                         <img data-src="https://pbs.twimg.com/profile_images/1501424591335526401/E9GZumcx_400x400.jpg" alt="KRA Services" class="service-image" loading="lazy">
                         <h3>KRA Services</h3>
                         <p>We offer PIN Registration, Filing Tax Returns, Tax Compliance Certificate (TCC) and  PIN Updates</p>
-                        <a href="https://wa.link/geuv49" class="cta-button">https://wa.link/geuv49</a>
+                        <a href="https://wa.link/geuv49" class="cta-button">Request Assistance</a>
                     </article>
                     <article class="service-card" data-service="good conduct">
                         <img data-src="https://pbs.twimg.com/media/DLNzRsfXUAED0Eu.jpg" alt="Good conduct Services" class="service-image" loading="lazy">
                         <h3>Good Conducts</h3>
                         <p>Need a Police Clearance Certificate (Good Conduct) for job applications, visa processing, or legal requirements?</p>
-                        <a href="https://wa.link/geuv49" class="cta-button">https://wa.link/geuv49</a>
+                        <a href="https://wa.link/geuv49" class="cta-button">Request Assistance</a>
                     </article>
                      <article class="service-card" data-service="NHIF">
                         <img data-src="https://pbs.twimg.com/profile_images/1811362575679918080/q4Q6M-Tm_400x400.jpg" alt="NHIF Services" class="service-image" loading="lazy">
@@ -499,25 +499,30 @@
             };
 
             serviceCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const service = this.getAttribute('data-service');
-                    const details = serviceDetails[service];
-                    
-                    if (details) {
-                        serviceInfo.innerHTML = `
-                            <h3>${details.title}</h3>
-                            <p>${details.description}</p>
-                            <h4>Requirements:</h4>
-                            <ul>
-                                ${details.requirements.map(req => `<li>${req}</li>`).join('')}
-                            </ul>
-                        `;
-                    }
-                    
-                    // Smooth scroll to service details
-                    serviceInfo.scrollIntoView({ behavior: 'smooth' });
-                });
-            });
+    card.addEventListener('click', function(event) {
+        // If the click is on the "Request Assistance" button, let it behave normally
+        if (event.target.closest('.cta-button')) {
+            return; // This allows the default link behavior
+        }
+
+        // For clicks anywhere else on the card, prevent default behavior
+        event.preventDefault();
+        
+        const service = this.getAttribute('data-service');
+        const details = serviceDetails[service];
+        
+        if (details) {
+            serviceInfo.innerHTML = `
+                <h3>${details.title}</h3>
+                <p>${details.description}</p>
+                <h4>Requirements:</h4>
+                <ul>
+                    ${details.requirements.map(req => `<li>${req}</li>`).join('')}
+                </ul>
+            `;
+        }
+    });
+});
 
             // FAQ Accordion
             const accordionItems = document.querySelectorAll('.accordion-item');
