@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +40,6 @@
             margin: 0 auto;
         }
 
-        /* Header Styles */
         .header {
             background-color: var(--primary-color);
             color: var(--white);
@@ -47,7 +47,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .header .container {
@@ -56,7 +56,8 @@
             align-items: center;
         }
 
-        .nav-toggle, .close-btn {
+        .nav-toggle,
+        .close-btn {
             display: none;
             background: transparent;
             border: none;
@@ -90,7 +91,6 @@
             color: var(--secondary-color);
         }
 
-        /* Hero Section Styles */
         .government-hero {
             background-color: #e1f5fe;
             text-align: center;
@@ -106,7 +106,6 @@
             color: var(--primary-color);
         }
 
-        /* Government Services Section Styles */
         .government-services {
             padding: 4rem 0;
         }
@@ -122,14 +121,14 @@
             background-color: var(--white);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .service-image {
@@ -171,7 +170,6 @@
             transform: translateY(-2px);
         }
 
-        /* Service Details Section */
         .service-details {
             background-color: var(--gray);
             padding: 3rem 0;
@@ -181,10 +179,9 @@
             background-color: var(--white);
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* FAQ Section */
         .faq {
             padding: 4rem 0;
         }
@@ -216,7 +213,6 @@
             display: none;
         }
 
-        /* Footer Styles */
         .footer {
             background-color: var(--primary-color);
             color: var(--white);
@@ -263,14 +259,14 @@
             font-size: 1.2rem;
         }
 
-        .copyright, .developer {
+        .copyright,
+        .developer {
             text-align: center;
             margin-top: 1rem;
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.8);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .header .container {
                 flex-direction: row;
@@ -284,6 +280,17 @@
             .main-nav {
                 display: none;
             }
+
+            .main-nav.active {
+                display: block;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--primary-color);
+                text-align: center;
+            }
+
             .service-card {
                 opacity: 0;
                 transform: translateY(20px);
@@ -297,6 +304,7 @@
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <div class="container">
@@ -312,285 +320,99 @@
                 </button>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html">Services</a></li>
+                    <li><a href="index.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero government-hero">
-            <div class="container">
-                <h2>Government Services</h2>
-                <p>Access essential government services with ease at CyberLink Nairobi</p>
-                <a href="#services" class="cta-button">Explore Services</a>
-            </div>
-        </section>
+    <section class="government-hero">
+        <div class="container">
+            <h2>Government Services</h2>
+            <p>Access a wide range of government services at CyberLink Nairobi.</p>
+        </div>
+    </section>
 
-        <section id="services" class="government-services">
-            <div class="container">
-                <div class="service-grid">
-                    <article class="service-card" data-service="kra">
-                        <img src="/api/placeholder/300/200" alt="KRA Services" class="service-image" loading="lazy">
-                        <h3>KRA Services</h3>
-                        <p>File your taxes, apply for KRA PIN, and access other tax-related services with our assistance.</p>
-                        <a href="#" class="cta-button">Apply Now</a>
-                    </article>
-                    <article class="service-card" data-service="helb">
-                        <img src="/api/placeholder/300/200" alt="HELB Applications" class="service-image" loading="lazy">
-                        <h3>HELB Applications</h3>
-                        <p>Apply for student loans, check your HELB status, and manage your account with our support.</p>
-                        <a href="#" class="cta-button">Apply Now</a>
-                    </article>
-                    <article class="service-card" data-service="ecitizen">
-                        <img src="/api/placeholder/300/200" alt="eCitizen Services" class="service-image" loading="lazy">
-                        <h3>eCitizen Services</h3>
-                        <p>Access a wide range of government services online, including passport applications and driving license renewals.</p>
-                        <a href="#" class="cta-button">Access Services</a>
-                    </article>
-                    <article class="service-card" data-service="nhif">
-                        <img src="/api/placeholder/300/200" alt="NHIF Services" class="service-image" loading="lazy">
-                        <h3>NHIF Services</h3>
-                        <p>Register for NHIF, pay contributions, and check your coverage status with our assistance.</p>
-                        <a href="#" class="cta-button">Learn More</a>
-                    </article>
+    <section class="government-services">
+        <div class="container">
+            <div class="service-grid">
+                <div class="service-card">
+                    <img class="service-image" src="/api/placeholder/600/400" alt="Service 1">
+                    <h3>KRA Services</h3>
+                    <p>Tax services including PIN registration and filing returns.</p>
+                </div>
+                <div class="service-card">
+                    <img class="service-image" src="/api/placeholder/600/400" alt="Service 2">
+                    <h3>HELB Services</h3>
+                    <p>Student loan applications, balance inquiries, and more.</p>
+                </div>
+                <div class="service-card">
+                    <img class="service-image" src="/api/placeholder/600/400" alt="Service 3">
+                    <h3>eCitizen Services</h3>
+                    <p>Government portals access for various services.</p>
                 </div>
             </div>
-        </section>
-
-        <section class="service-details">
-            <div class="container">
-                <h2>Service Details</h2>
-                <div id="serviceInfo" class="service-info">
-                    <p>Click on a service above to see more details.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="faq">
-            <div class="container">
-                <h2>Frequently Asked Questions</h2>
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <button class="accordion-header">What documents do I need for KRA registration?</button>
-                        <div class="accordion-content">
-                            <p>For KRA registration, you typically need your national ID or passport, a recent passport-sized photo, and proof of address. Our staff can guide you through the specific requirements based on your situation.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">How long does HELB application processing take?</button>
-                        <div class="accordion-content">
-                            <p>HELB application processing usually takes 30-45 days. However, this can vary depending on the volume of applications. We recommend applying early to ensure you receive your funds before the semester begins.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">Can I renew my driving license through eCitizen?</button>
-                        <div class="accordion-content">
-                            <p>Yes, you can renew your driving license through eCitizen. The process is straightforward, and our staff can assist you with the online application, document upload, and payment process.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>Email: info@cyberlinknairobi.com</p>
-                    <p>Phone: +254 114 070 477</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <div class="social-media">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>CyberLink Nairobi provides quick and efficient access to essential government services.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">KRA</a></li>
+                    <li><a href="#">HELB</a></li>
+                    <li><a href="#">eCitizen</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-media">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            <p class="copyright">&copy; 2024 CyberLink Nairobi. All Rights Reserved.</p>
-            <p class="developer">&reg; Developed By AustinHub. 0114070477</p>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; 2023 CyberLink Nairobi. All rights reserved.
+            </div>
+            <div class="developer">
+                <p>Designed by CyberLink Nairobi.</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Navigation toggle
-            const navToggle = document.querySelector('.nav-toggle');
-            const mainNav = document.querySelector('.main-nav');
-            const closeBtn = document.querySelector('.close-btn');
+        const navToggle = document.querySelector('.nav-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        const closeBtn = document.querySelector('.close-btn');
+        const serviceCards = document.querySelectorAll('.service-card');
 
-            navToggle.addEventListener('click', function() {
-                mainNav.classList.toggle('active');
-            });
+        navToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
 
-            closeBtn.addEventListener('click', function() {
-                mainNav.classList.remove('active');
-            });
+        closeBtn.addEventListener('click', () => {
+            mainNav.classList.remove('active');
+        });
 
-            // Service card click handler
-            const serviceCards = document.querySelectorAll('.service-card');
-            const serviceInfo = document.getElementById('serviceInfo');
-
-            const serviceDetails = {
-                kra: {
-                    title: "KRA Services",
-                    description: "Our KRA services include assistance with tax returns, KRA PIN registration, and tax compliance certificates. We provide step-by-step guidance to ensure you meet all tax obligations efficiently.",
-                    requirements: ["National ID or Passport", "Recent digital passport-sized photo", "Proof of address (e.g., utility bill)"]
-                },
-                helb: {
-                    title: "HELB Applications",
-                    description: "We assist students in applying for HELB loans, checking application status, and managing repayments. Our team ensures that you complete all necessary forms accurately to increase your chances of approval.",
-                    requirements: ["National ID", "KCSE or high school leaving certificate", "Admission letter from your institution", "Parents'/Guardians' income details"]
-                },
-                ecitizen: {
-                    title: "eCitizen Services",
-                    description: "Access a wide range of government services online through eCitizen. We help with passport applications, driving license renewals, business registrations, and more, making the process smooth and hassle-free.",
-                    requirements: ["eCitizen account (we can help you create one)", "Relevant personal documents depending on the service", "Means of payment (M-Pesa, credit/debit card)"]
-                },
-                nhif: {
-                    title: "NHIF Services",
-                    description: "Register for NHIF, pay contributions, and manage your health insurance coverage with our assistance. We guide you through the process of choosing the right cover for you and your family.",
-                    requirements: ["National ID", "Recent passport-sized photo", "Proof of employment or self-employment", "Dependents' details (if applicable)"]
-                }
-            };
-
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
             serviceCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const service = this.getAttribute('data-service');
-                    const details = serviceDetails[service];
-                    
-                    if (details) {
-                        serviceInfo.innerHTML = `
-                            <h3>${details.title}</h3>
-                            <p>${details.description}</p>
-                            <h4>Requirements:</h4>
-                            <ul>
-                                ${details.requirements.map(req => `<li>${req}</li>`).join('')}
-                            </ul>
-                        `;
-                    }
-                    
-                    // Smooth scroll to service details
-                    serviceInfo.scrollIntoView({ behavior: 'smooth' });
-                });
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < windowHeight - 100) {
+                    card.classList.add('animate');
+                }
             });
-
-            // FAQ Accordion
-            const accordionItems = document.querySelectorAll('.accordion-item');
-
-            accordionItems.forEach(item => {
-                const header = item.querySelector('.accordion-header');
-                const content = item.querySelector('.accordion-content');
-
-                header.addEventListener('click', () => {
-                    // Close all other accordion items
-                    accordionItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.querySelector('.accordion-content').style.display = 'none';
-                            otherItem.classList.remove('active');
-                        }
-                    });
-
-                    // Toggle the clicked item
-                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-                    item.classList.toggle('active');
-                });
-            });
-
-            // Lazy loading for images
-            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-            
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.src = img.dataset.src;
-                            img.removeAttribute('loading');
-                            imageObserver.unobserve(img);
-                        }
-                    });
-                });
-
-                lazyImages.forEach(img => imageObserver.observe(img));
-            } else {
-                // Fallback for browsers that don't support IntersectionObserver
-                lazyImages.forEach(img => {
-                    img.src = img.dataset.src;
-                    img.removeAttribute('loading');
-                });
-            }
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Performance optimization: Debounce function for scroll events
-            function debounce(func, wait = 20, immediate = true) {
-                let timeout;
-                return function() {
-                    const context = this, args = arguments;
-                    const later = function() {
-                        timeout = null;
-                        if (!immediate) func.apply(context, args);
-                    };
-                    const callNow = immediate && !timeout;
-                    clearTimeout(timeout);
-                    timeout = setTimeout(later, wait);
-                    if (callNow) func.apply(context, args);
-                };
-            }
-
-            // Add a subtle parallax effect to the hero section
-            const hero = document.querySelector('.government-hero');
-            function parallaxEffect() {
-                const scrolled = window.pageYOffset;
-                const coords = '50% ' + (scrolled * 0.4) + 'px';
-                hero.style.backgroundPosition = coords;
-            }
-
-            window.addEventListener('scroll', debounce(parallaxEffect));
-
-            // Add animation to service cards when they come into view
-            const animateOnScroll = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            };
-
-            const options = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver(animateOnScroll, options);
-            serviceCards.forEach(card => observer.observe(card));
         });
     </script>
 </body>
+
 </html>
