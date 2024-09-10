@@ -1,3 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Services</title>
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #0288d1;
+            --secondary-color: #ff5722;
+            --white: #ffffff;
+            --gray: #f0f0f0;
+            --dark-gray: #333333;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 0;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .main-nav a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section Styles */
         .government-hero {
             background-color: #e1f5fe;
             text-align: center;
@@ -251,16 +324,11 @@
                 <div class="service-card" data-service="nhif">
                     <img src="path/to/nhif-image.jpg" class="service-image" alt="NHIF Services">
                     <h3>NHIF Services</h3>
-                    <p>Register for NHIF and manage your health insurance.</p>
+                    <p>Manage your health insurance coverage with our help.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="service-details">
-        <div class="container">
-            <div id="serviceInfo" class="service-info">
-                <!-- Service details will be inserted here dynamically -->
+            <div class="service-info" id="serviceInfo">
+                <!-- Service details will be injected here -->
             </div>
         </div>
     </section>
@@ -268,31 +336,47 @@
     <section id="faq" class="faq">
         <div class="container">
             <div class="accordion-item">
-                <button class="accordion-header">What services do you offer?</button>
+                <div class="accordion-header">What is KRA?</div>
                 <div class="accordion-content">
-                    <p>We offer various government-related services, including KRA, HELB, eCitizen, and NHIF services.</p>
+                    <p>The Kenya Revenue Authority (KRA) is responsible for the collection of tax revenues for the Government of Kenya.</p>
                 </div>
             </div>
             <div class="accordion-item">
-                <button class="accordion-header">How can I contact support?</button>
+                <div class="accordion-header">How can I apply for HELB?</div>
                 <div class="accordion-content">
-                    <p>You can contact support through our contact page or directly via email.</p>
+                    <p>HELB applications can be done online through the HELB portal. Ensure you have all required documents ready.</p>
                 </div>
             </div>
-            <!-- Add more FAQ items as needed -->
+            <div class="accordion-item">
+                <div class="accordion-header">What services are available on eCitizen?</div>
+                <div class="accordion-content">
+                    <p>eCitizen offers services such as passport applications, driving license renewals, and business registrations.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">How do I register for NHIF?</div>
+                <div class="accordion-content">
+                    <p>You can register for NHIF online or at NHIF offices. You'll need your ID and a recent passport-sized photo.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-section">
-                <h3>About Us</h3>
-                <p>We provide various government-related services to make your life easier.</p>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
-            <div class="footer-section">
+            <div class="footer-section contact-info">
                 <h3>Contact Us</h3>
                 <ul>
-                    <li><a href="mailto:info@example.com">Email</a></li>
+                    <li><a href="mailto:info@governmentservices.com">Email</a></li>
                     <li><a href="tel:+123456789">Phone</a></li>
                 </ul>
             </div>
