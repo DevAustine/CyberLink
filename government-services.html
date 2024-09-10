@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Government Services</title>
+    <title>Government Services - CyberLink Nairobi</title>
+    <meta name="description" content="Access a wide range of government services at CyberLink Nairobi. We assist with KRA, HELB, eCitizen, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
     <style>
         :root {
             --primary-color: #1a73e8;
@@ -279,7 +284,6 @@
             .main-nav {
                 display: none;
             }
-
             .service-card {
                 opacity: 0;
                 transform: translateY(20px);
@@ -296,102 +300,129 @@
 <body>
     <header class="header">
         <div class="container">
-            <button class="nav-toggle">&#9776;</button>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="logo">
-                <h1>Government Services</h1>
+                <h1><i class="fas fa-laptop"></i> CyberLink Nairobi</h1>
             </div>
             <nav class="main-nav">
+                <button class="close-btn" aria-label="Close navigation">
+                    <i class="fas fa-times"></i>
+                </button>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
-                <button class="close-btn">&times;</button>
             </nav>
         </div>
     </header>
 
-    <section class="government-hero">
-        <div class="container">
-            <h2>Welcome to Our Government Services</h2>
-        </div>
-    </section>
+    <main>
+        <section class="hero government-hero">
+            <div class="container">
+                <h2>Government Services</h2>
+                <p>Access essential government services with ease at CyberLink Nairobi</p>
+                <a href="#services" class="cta-button">Explore Services</a>
+            </div>
+        </section>
 
-    <section id="services" class="government-services">
-        <div class="container">
-            <div class="service-grid">
-                <div class="service-card" data-service="kra">
-                    <img src="path/to/kra-image.jpg" class="service-image" alt="KRA Services">
-                    <h3>KRA Services</h3>
-                    <p>Get help with tax returns, KRA PIN registration, and more.</p>
-                </div>
-                <div class="service-card" data-service="helb">
-                    <img src="path/to/helb-image.jpg" class="service-image" alt="HELB Applications">
-                    <h3>HELB Applications</h3>
-                    <p>Assistance with HELB loans and application processes.</p>
-                </div>
-                <div class="service-card" data-service="ecitizen">
-                    <img src="path/to/ecitizen-image.jpg" class="service-image" alt="eCitizen Services">
-                    <h3>eCitizen Services</h3>
-                    <p>Access various government services online.</p>
-                </div>
-                <div class="service-card" data-service="nhif">
-                    <img src="path/to/nhif-image.jpg" class="service-image" alt="NHIF Services">
-                    <h3>NHIF Services</h3>
-                    <p>Register for NHIF and manage your health insurance.</p>
+        <section id="services" class="government-services">
+            <div class="container">
+                <div class="service-grid">
+                    <article class="service-card" data-service="kra">
+                        <img src="/api/placeholder/300/200" alt="KRA Services" class="service-image" loading="lazy">
+                        <h3>KRA Services</h3>
+                        <p>File your taxes, apply for KRA PIN, and access other tax-related services with our assistance.</p>
+                        <a href="#" class="cta-button">Apply Now</a>
+                    </article>
+                    <article class="service-card" data-service="helb">
+                        <img src="/api/placeholder/300/200" alt="HELB Applications" class="service-image" loading="lazy">
+                        <h3>HELB Applications</h3>
+                        <p>Apply for student loans, check your HELB status, and manage your account with our support.</p>
+                        <a href="#" class="cta-button">Apply Now</a>
+                    </article>
+                    <article class="service-card" data-service="ecitizen">
+                        <img src="/api/placeholder/300/200" alt="eCitizen Services" class="service-image" loading="lazy">
+                        <h3>eCitizen Services</h3>
+                        <p>Access a wide range of government services online, including passport applications and driving license renewals.</p>
+                        <a href="#" class="cta-button">Access Services</a>
+                    </article>
+                    <article class="service-card" data-service="nhif">
+                        <img src="/api/placeholder/300/200" alt="NHIF Services" class="service-image" loading="lazy">
+                        <h3>NHIF Services</h3>
+                        <p>Register for NHIF, pay contributions, and check your coverage status with our assistance.</p>
+                        <a href="#" class="cta-button">Learn More</a>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="service-details">
-        <div class="container">
-            <div id="serviceInfo" class="service-info">
-                <!-- Service details will be inserted here dynamically -->
+        <section class="service-details">
+            <div class="container">
+                <h2>Service Details</h2>
+                <div id="serviceInfo" class="service-info">
+                    <p>Click on a service above to see more details.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="faq" class="faq">
-        <div class="container">
-            <div class="accordion-item">
-                <button class="accordion-header">What services do you offer?</button>
-                <div class="accordion-content">
-                    <p>We offer various government-related services, including KRA, HELB, eCitizen, and NHIF services.</p>
+        <section class="faq">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">What documents do I need for KRA registration?</button>
+                        <div class="accordion-content">
+                            <p>For KRA registration, you typically need your national ID or passport, a recent passport-sized photo, and proof of address. Our staff can guide you through the specific requirements based on your situation.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">How long does HELB application processing take?</button>
+                        <div class="accordion-content">
+                            <p>HELB application processing usually takes 30-45 days. However, this can vary depending on the volume of applications. We recommend applying early to ensure you receive your funds before the semester begins.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Can I renew my driving license through eCitizen?</button>
+                        <div class="accordion-content">
+                            <p>Yes, you can renew your driving license through eCitizen. The process is straightforward, and our staff can assist you with the online application, document upload, and payment process.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="accordion-item">
-                <button class="accordion-header">How can I contact support?</button>
-                <div class="accordion-content">
-                    <p>You can contact support through our contact page or directly via email.</p>
-                </div>
-            </div>
-            <!-- Add more FAQ items as needed -->
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p>We provide various government-related services to make your life easier.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@cyberlinknairobi.com</p>
+                    <p>Phone: +254 114 070 477</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-media">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li><a href="mailto:info@example.com">Email</a></li>
-                    <li><a href="tel:+123456789">Phone</a></li>
-                </ul>
-            </div>
-            <div class="footer-section social-media">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">Instagram</a>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2024 Government Services. All rights reserved.
+            <p class="copyright">&copy; 2024 CyberLink Nairobi. All Rights Reserved.</p>
+            <p class="developer">&reg; Developed By AustinHub. 0114070477</p>
         </div>
     </footer>
 
