@@ -1,14 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Job Application Services - CyberLink Nairobi</title>
-        <meta name="description" content="Access a wide range of government services at CyberLink Nairobi. We assist with KRA, HELB, eCitizen, and more." />
+        <meta name="description" content="Get expert assistance with job applications, resume writing, and career advancement at CyberLink Nairobi. Boost your job search with our professional services." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer="defer"></script>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "CyberLink Nairobi",
+          "description": "Professional job application and career services in Nairobi",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Nairobi",
+            "addressCountry": "KE"
+          },
+          "telephone": "+254114070477",
+          "url": "https://cyberlinknairobi.netlify.app/"
+        }
+        </script>
         <style>
             :root {
                 --primary-color: #1a73e8;
@@ -201,6 +217,52 @@
             .social-media a:hover {
                 color: var(--secondary-color);
             }
+            .testimonials {
+                background-color: var(--white);
+                padding: 4rem 0;
+            }
+            .testimonial-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+            .testimonial-card {
+                background-color: var(--gray);
+                border-radius: 10px;
+                padding: 2rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .testimonial-card p {
+                font-style: italic;
+                margin-bottom: 1rem;
+            }
+            .testimonial-card .author {
+                font-weight: bold;
+            }
+            .newsletter-form {
+                margin-top: 2rem;
+                display: flex;
+                justify-content: center;
+            }
+            .newsletter-form input[type="email"] {
+                padding: 0.8rem;
+                width: 300px;
+                border: 1px solid var(--gray);
+                border-radius: 5px 0 0 5px;
+            }
+            .newsletter-form button {
+                padding: 0.8rem 1.5rem;
+                background-color: var(--primary-color);
+                color: var(--white);
+                border: none;
+                border-radius: 0 5px 5px 0;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .newsletter-form button:hover {
+                background-color: #1565c0;
+            }
             @media (max-width: 768px) {
                 .header .container {
                     flex-direction: row;
@@ -249,6 +311,19 @@
                     opacity: 1;
                     transform: translateY(0);
                 }
+                .newsletter-form {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .newsletter-form input[type="email"] {
+                    width: 100%;
+                    margin-bottom: 1rem;
+                    border-radius: 5px;
+                }
+                .newsletter-form button {
+                    width: 100%;
+                    border-radius: 5px;
+                }
             }
         </style>
     </head>
@@ -263,10 +338,16 @@
                     <button class="close-btn" aria-label="Close navigation"><i class="fas fa-times"></i></button>
                     <ul>
                         <li>
-                            <a href="index.html"><i class="fas fa-home"></i>Home</a>
+                            <a href="#"><i class="fas fa-home"></i>Home</a>
                         </li>
                         <li>
                             <a href="#services"><i class="fas fa-cogs"></i>Services</a>
+                        </li>
+                        <li>
+                            <a href="#testimonials"><i class="fas fa-comments"></i>Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="#faq"><i class="fas fa-question-circle"></i>FAQ</a>
                         </li>
                         <li>
                             <a href="tel:+254114070477"><i class="fas fa-phone"></i>Contact</a>
@@ -278,33 +359,88 @@
         <main>
             <section class="hero government-hero">
                 <div class="container">
-                    <h2>Job Application</h2>
-                    <p>Get expert help with resumes, cover letters, and application forms to boost your job search at CyberLink Nairobi</p>
-                    <a href="#services" class="cta-button">Explore Service</a>
+                    <h2>Boost Your Career with Expert Job Application Services</h2>
+                    <p>Get professional help with resumes, cover letters, and application forms to supercharge your job search at CyberLink Nairobi</p>
+                    <a href="#services" class="cta-button">Explore Our Services</a>
                 </div>
             </section>
             <section id="services" class="government-services">
                 <div class="container">
+                    <h2>Our Services</h2>
                     <div class="service-grid">
-                        <article class="service-card" data-service="job application">
-                            <img data-src="https://janejacksoncoach.com/wp-content/uploads/2015/01/JJC-JOB-SEARCH-ONLINE-PIC.jpg" alt="job application" class="service-image" loading="lazy" />
-                            <h3>Job Search</h3>
-                            <p>We assist clients find relevant job openings tailored to their qualifications, skills, and experience.</p>
-                            <a href="https://wa.link/5bjdnu" class="cta-button">Request Assistance</a>
+                        <article class="service-card" data-service="job search">
+                            <img data-src="/api/placeholder/400/320" alt="Job Search Assistance" class="service-image" loading="lazy" />
+                            <h3>Job Search Assistance</h3>
+                            <p>We help you find relevant job openings tailored to your qualifications, skills, and experience. Our experts use advanced job search techniques to uncover opportunities you might miss.</p>
+                            <a href="https://wa.link/5bjdnu" class="cta-button">Get Started Now</a>
                         </article>
-                        <article class="service-card" data-service="ntsa">
-                            <img data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNKJnEJce05VOd2hvlqHaQ5rRZc1h6JUrVOg&s" alt="professional profile" class="service-image" loading="lazy" />
-                            <h3>Professional Profiles</h3>
-                            <p>We offer services to enhance LinkedIn profiles, freelancing profiles, personal websites, resumes, cover letters, and personal branding, along with digital portfolios and career achievement highlighting.</p>
-                            <a href="https://wa.link/5bjdnu" class="cta-button">Request Assistance</a>
+                        <article class="service-card" data-service="professional profiles">
+                            <img data-src="/api/placeholder/400/320" alt="Professional Profile Creation" class="service-image" loading="lazy" />
+                            <h3>Professional Profile Creation</h3>
+                            <p>Enhance your online presence with our profile creation services. We optimize your LinkedIn, craft compelling resumes, and develop your personal brand to make you stand out to potential employers.</p>
+                            <a href="https://wa.link/5bjdnu" class="cta-button">Boost Your Profile</a>
+                        </article>
+                        <article class="service-card" data-service="interview preparation">
+                            <img data-src="/api/placeholder/400/320" alt="Interview Preparation" class="service-image" loading="lazy" />
+                            <h3>Interview Preparation</h3>
+                            <p>Ace your interviews with our comprehensive preparation services. We conduct mock interviews, provide feedback, and teach you strategies to tackle tough questions with confidence.</p>
+                            <a href="https://wa.link/5bjdnu" class="cta-button">Prepare for Success</a>
                         </article>
                     </div>
                 </div>
             </section>
-            <section class="service-details">
+            <section id="testimonials" class="testimonials">
                 <div class="container">
-                    <h2>Service Details</h2>
-                    <div id="serviceInfo" class="service-info"><p>Click on a service above to see more details.</p></div>
+                    <h2>What Our Clients Say</h2>
+                    <div class="testimonial-grid">
+                        <div class="testimonial-card">
+                            <p>"CyberLink Nairobi helped me land my dream job! Their resume writing service and interview preparation were invaluable."</p>
+                            <p class="author">- Jane D., Software Developer</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p>"I was struggling to find job opportunities, but with their job search assistance, I received multiple offers within weeks!"</p>
+                            <p class="author">- John M., Marketing Specialist</p>
+                        </div>
+                        <div class="testimonial-card">
+                            <p>"The professional profile creation service transformed my online presence. I'm now getting noticed by top companies."</p>
+                            <p class="author">- Sarah K., Project Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="faq" class="faq">
+                <div class="container">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <button class="accordion-header">What services does CyberLink Nairobi offer?</button>
+                            <div class="accordion-content">
+                                <p>CyberLink Nairobi offers a range of job application and career services, including job search assistance, professional profile creation, resume writing, cover letter writing, LinkedIn optimization, and interview preparation.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header">How long does it take to get a completed resume?</button>
+                            <div class="accordion-content">
+                                <p>Typically, we deliver a completed resume within 3-5 business days after receiving all necessary information from you. Rush services are available for an additional fee.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-header">Do you guarantee job placement?</button>
+                            <div class="accordion-content">
+                                <p>While we cannot guarantee job placement, our services are designed to significantly improve your chances of landing interviews and job offers. We provide you with the tools and strategies to stand out in the job market.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="newsletter">
+                <div class="container">
+                    <h2>Stay Updated with Career Tips</h2>
+                    <p>Subscribe to our newsletter for the latest job market insights and career advice.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
                 </div>
             </section>
         </main>
@@ -313,9 +449,12 @@
                 <p>&copy; 2024 CyberLink Nairobi. All rights reserved.</p>
                 <p>&reg; Developed By AustinHub.</p>
                 <div class="social-media">
-                    <a href="index.html"><i class="fab fa-facebook"></i></a><a href="index.html"><i class="fab fa-twitter"></i></a><a href="index.html"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.link/5bjdnu"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.link/5bjdnu" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
+                <p><a href="#" style="color: var(--white);">Privacy Policy</a></p>
             </div>
         </footer>
         <script>
@@ -333,66 +472,11 @@
                     mainNav.classList.remove("active");
                 });
 
-                // Close navigation when a link is clicked (optional)
+                // Close navigation when a link is clicked
                 const navLinks = document.querySelectorAll(".main-nav ul li a");
                 navLinks.forEach((link) => {
                     link.addEventListener("click", () => {
                         mainNav.classList.remove("active");
-                    });
-                });
-
-                // Service card click handler
-                const serviceCards = document.querySelectorAll(".service-card");
-                const serviceInfo = document.getElementById("serviceInfo");
-
-                const serviceDetails = {
-                    kra: {
-                        title: "KRA Services",
-                        description: "Our KRA services include assistance with tax returns, KRA PIN registration, and tax compliance certificates. We provide step-by-step guidance to ensure you meet all tax obligations efficiently.",
-                        requirements: ["National ID or Passport", "Recent digital passport-sized photo", "Proof of address (e.g., utility bill)"],
-                    },
-                    helb: {
-                        title: "HELB Applications",
-                        description:
-                            "We assist students in applying for HELB loans, checking application status, and managing repayments. Our team ensures that you complete all necessary forms accurately to increase your chances of approval.",
-                        requirements: ["National ID", "KCSE or high school leaving certificate", "Admission letter from your institution", "Parents'/Guardians' income details"],
-                    },
-                    ecitizen: {
-                        title: "eCitizen Services",
-                        description:
-                            "Access a wide range of government services online through eCitizen. We help with passport applications, driving license renewals, business registrations, and more, making the process smooth and hassle-free.",
-                        requirements: ["eCitizen account (we can help you create one)", "Relevant personal documents depending on the service", "Means of payment (M-Pesa, credit/debit card)"],
-                    },
-                    nhif: {
-                        title: "NHIF Services",
-                        description: "Register for NHIF, pay contributions, and manage your health insurance coverage with our assistance. We guide you through the process of choosing the right cover for you and your family.",
-                        requirements: ["National ID", "Recent passport-sized photo", "Proof of employment or self-employment", "Dependents' details (if applicable)"],
-                    },
-                };
-
-                serviceCards.forEach((card) => {
-                    card.addEventListener("click", function (event) {
-                        // If the click is on the "Request Assistance" button, let it behave normally
-                        if (event.target.closest(".cta-button")) {
-                            return; // This allows the default link behavior
-                        }
-
-                        // For clicks anywhere else on the card, prevent default behavior
-                        event.preventDefault();
-
-                        const service = this.getAttribute("data-service");
-                        const details = serviceDetails[service];
-
-                        if (details) {
-                            serviceInfo.innerHTML = `
-                <h3>${details.title}</h3>
-                <p>${details.description}</p>
-                <h4>Requirements:</h4>
-                <ul>
-                    ${details.requirements.map((req) => `<li>${req}</li>`).join("")}
-                </ul>
-            `;
-                        }
                     });
                 });
 
@@ -404,7 +488,6 @@
                     const content = item.querySelector(".accordion-content");
 
                     header.addEventListener("click", () => {
-                        // Close all other accordion items
                         accordionItems.forEach((otherItem) => {
                             if (otherItem !== item) {
                                 otherItem.querySelector(".accordion-content").style.display = "none";
@@ -412,7 +495,6 @@
                             }
                         });
 
-                        // Toggle the clicked item
                         content.style.display = content.style.display === "block" ? "none" : "block";
                         item.classList.toggle("active");
                     });
@@ -435,7 +517,6 @@
 
                     lazyImages.forEach((img) => imageObserver.observe(img));
                 } else {
-                    // Fallback for browsers that don't support IntersectionObserver
                     lazyImages.forEach((img) => {
                         img.src = img.dataset.src;
                         img.removeAttribute("loading");
@@ -456,33 +537,6 @@
                     });
                 });
 
-                // Performance optimization: Debounce function for scroll events
-                function debounce(func, wait = 20, immediate = true) {
-                    let timeout;
-                    return function () {
-                        const context = this,
-                            args = arguments;
-                        const later = function () {
-                            timeout = null;
-                            if (!immediate) func.apply(context, args);
-                        };
-                        const callNow = immediate && !timeout;
-                        clearTimeout(timeout);
-                        timeout = setTimeout(later, wait);
-                        if (callNow) func.apply(context, args);
-                    };
-                }
-
-                // Add a subtle parallax effect to the hero section
-                const hero = document.querySelector(".government-hero");
-                function parallaxEffect() {
-                    const scrolled = window.pageYOffset;
-                    const coords = "50% " + scrolled * 0.4 + "px";
-                    hero.style.backgroundPosition = coords;
-                }
-
-                window.addEventListener("scroll", debounce(parallaxEffect));
-
                 // Add animation to service cards when they come into view
                 const animateOnScroll = (entries, observer) => {
                     entries.forEach((entry) => {
@@ -500,6 +554,7 @@
                 };
 
                 const observer = new IntersectionObserver(animateOnScroll, options);
+                const serviceCards = document.querySelectorAll(".service-card");
                 serviceCards.forEach((card) => observer.observe(card));
             });
         </script>
