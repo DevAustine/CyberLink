@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>z
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="CyberLink Nairobi - Your premier cyber cafe for government services, academic assistance, job applications, and more. Visit us for efficient and professional online services in Nairobi, Kenya." />
@@ -66,12 +66,11 @@
             .header {
                 background-color: var(--primary-color);
                 color: var(--white);
-                padding: 0.5rem 0;
+                padding: 1rem 0;
                 position: sticky;
                 top: 0;
                 z-index: 1000;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-         
             }
             .header .container {
                 display: flex;
@@ -87,12 +86,14 @@
                 cursor: pointer;
                 order: -1;
             }
-         
             .logo h1 {
                 font-size: 1.3rem;
                 color: var(--white);
             }
-       
+            .main-nav {
+                display: flex;
+                justify-content: flex-end;
+            }
             .close-btn {
                 display: none;
                 background: 0 0;
@@ -101,9 +102,6 @@
                 font-size: 1.5rem;
                 cursor: pointer;
                 margin-right: 1rem;
-            }
-            .main-nav {
-                flex: 1 1 auto
             }
             .main-nav ul {
                 list-style-type: none;
@@ -306,16 +304,9 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        @media (max-width: 768px) {
-            .header .container {
-                justify-content: space-between;
-            }
-            
-       
 
         .search-container {
-              flex: 0 1 auto;
-              margin-left: auto; /* This pushes it to the right */
+            margin: 0.5rem 0;
         } 
 
         .search-container input[type="text"] {
@@ -323,7 +314,6 @@
             width: 70%;
             border: 1px solid #ddd;
             border-radius: 5px 0 0 5px;
-
         }
 
         .search-container button {
@@ -333,10 +323,8 @@
             border: none;
             border-radius: 0 5px 5px 0;
             cursor: pointer;
-
-     
         }
-    
+
         .faq-section {
             margin-top: 2rem;
         }
@@ -406,8 +394,8 @@
                     <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
                     <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
-                    <li><a href="#store"><i class="fas fa-store"></i> Online Store</a></li>
-              <!--      <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li> -->
+             <!--       <li><a href="#store"><i class="fas fa-store"></i> Online Store</a></li> -->
+                    <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
                 </ul>
             </nav>
             <div class="search-container">
