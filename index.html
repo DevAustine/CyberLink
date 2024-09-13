@@ -71,6 +71,11 @@
                 top: 0;
                 z-index: 1000;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
             }
             .header .container {
                 display: flex;
@@ -85,6 +90,9 @@
                 font-size: 1.5rem;
                 cursor: pointer;
                 order: -1;
+            }
+            .logo {
+                flex: 0 1 auto;
             }
             .logo h1 {
                 font-size: 1.3rem;
@@ -102,6 +110,9 @@
                 font-size: 1.5rem;
                 cursor: pointer;
                 margin-right: 1rem;
+            }
+            .main-nav {
+                flex: 1 1 auto
             }
             .main-nav ul {
                 list-style-type: none;
@@ -304,9 +315,21 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        @media (max-width: 768px) {
+            .header .container {
+                justify-content: space-between;
+            }
+            
+            .search-container {
+                order: 3; /* This ensures it's at the bottom on mobile */
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
 
         .search-container {
-            margin: 0.5rem 0;
+              flex: 0 1 auto;
+              margin-left: auto; /* This pushes it to the right */
         } 
 
         .search-container input[type="text"] {
@@ -314,6 +337,9 @@
             width: 70%;
             border: 1px solid #ddd;
             border-radius: 5px 0 0 5px;
+
+            width: calc(100% - 40px); /* Adjust based on your button width */
+            max-width: 200px; /* Or any other max-width you prefer */
         }
 
         .search-container button {
@@ -323,6 +349,14 @@
             border: none;
             border-radius: 0 5px 5px 0;
             cursor: pointer;
+
+            width: 40px; /* Adjust as needed */
+        }
+        @media (max-width: 768px) {
+            .search-container input[type="text"] {
+                width: calc(100% - 40px);
+                max-width: none;
+            }
         }
 
         .faq-section {
