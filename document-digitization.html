@@ -55,43 +55,73 @@
         }
 
         /* Header Styles */
-        .header {
+	.header {
             background-color: var(--primary-color);
             color: var(--white);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
         .header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .nav-toggle {
-            display: none; /* Hide toggle button by default */
-            background: transparent;
+            display: none;
+            background: none;
             border: none;
             color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
-            order: -1; /* Move toggle button to the left */
         }
-
         .logo h1 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--white);
         }
-
         .main-nav {
             display: flex;
-            justify-content: flex-end; /* Align close button to the right */
+            justify-content: flex-end;
+        }
+        .main-nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+        .main-nav ul li {
+            position: relative;
+            margin-left: 1.5rem;
+        }
+        .main-nav ul li a {
+            color: var(--white);
+            font-weight: 500;
+        }
+        .main-nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--primary-color);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
-        .close-btn {
+	.close-btn {
             display: none; /* Hide close button by default */
             background: transparent;
             border: none;
@@ -99,24 +129,6 @@
             font-size: 1.5rem;
             cursor: pointer;
             margin-right: 1rem;
-        }
-
-        .main-nav ul {
-            list-style-type: none;
-            display: flex;
-        }
-
-        .main-nav ul li {
-            margin-left: 1.5rem;
-        }
-
-        .main-nav ul li a {
-            color: var(--white);
-            font-weight: 500;
-        }
-
-        .main-nav ul li a:hover {
-            color: var(--secondary-color);
         }
 
         /* Hero Section Styles */
@@ -475,19 +487,30 @@
         <div class="container">
             <button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
             <div class="logo">
-                <h1><i class="fas fa-laptop"></i> CyberLink</h1>
+                <h1><i class="fas fa-laptop"></i> CyberLink Nairobi</h1>
             </div>
             <nav class="main-nav">
-                <button class="close-btn" aria-label="Close navigation"><i class="fas fa-times"></i></button>
+		<button class="close-btn" aria-label="Close navigation"><i class="fas fa-times"></i></button>
                 <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
-                    <li><a href="tel:+254114070477"><i class="fas fa-phone"></i> Contact</a></li>
-                    <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="dropdown">
+                        <a href="#services"><i class="fas fa-cogs"></i> Services</a>
+                        <div class="dropdown-content">
+                            <a href="#government-services">Government Services</a>
+                            <a href="#academic-services">Academic Services</a>
+                            <a href="#job-applications">Job Applications</a>
+                            <a href="#travel-visa">Travel & Visa</a>
+                            <a href="#document-digitization">Document Digitization</a>
+                            <a href="#online-banking">Online Banking</a>
+                        </div>
+                    </li>
+                    <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
+                    <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
 
     <main>
         <div class="breadcrumb">
