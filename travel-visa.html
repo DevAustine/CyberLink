@@ -106,6 +106,39 @@
             color: var(--secondary-color);
         }
 
+	     .breadcrumb {
+	       padding: 0.5rem 0;
+	       margin-bottom: 1rem;
+	       font-size: 0.9rem;
+	    }
+	    .breadcrumb a {
+	    color: var(--primary-color);
+	    text-decoration: none;
+	}
+	.breadcrumb span {
+	    color: var(--dark-gray);
+	}
+	    .search-container {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+        }
+        .search-container input[type="text"] {
+            padding: 0.5rem;
+            width: 70%;
+            max-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+        .search-container button {
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
         /* Hero Section Styles */
         .government-hero {
             background-color: #e1f5fe;
@@ -424,9 +457,13 @@
                 <a href="#services" class="cta-button">Explore Our Services</a>
             </div>
         </section>
+	<div class="search-container">
+            <input type="text" placeholder="Search services...">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
         <section id="services" class="government-services">
             <div class="container">
-                <h2>Our Services</h2>
+            <!--    <h2>Our Services</h2>  -->
                 <div class="service-grid">
                     <article class="service-card" data-service="travel">
                         <img data-src="/api/placeholder/400/300" alt="Travel Services" class="service-image" loading="lazy" />
@@ -505,13 +542,11 @@
                 <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://wa.link/5bjdnu" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                </ul>
-            </nav>
+         
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a> |
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
         </div>
     </footer>
     <script>
