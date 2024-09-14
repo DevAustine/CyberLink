@@ -96,12 +96,12 @@
                 padding: 4rem 0;
             }
 	    article img {
-	    width: 250px;
-	    height: 245px;
-	    object-fit: contain; /* Ensures the image fits within the size without being distorted */
-	    max-width: 100%; /* Ensures the image is responsive on smaller screens */
-	    display: block; /* Prevents the image from behaving like inline elements */
-	    margin: 0 auto; /* Centers the image within the article */
+	        width: 250px;
+	        height: 250px;
+	        object-fit: contain; /* Ensures the image fits within the size without being distorted */
+	        max-width: 100%; /* Ensures the image is responsive on smaller screens */
+	        display: block; /* Prevents the image from behaving like inline elements */
+	        margin: 0 auto; /* Centers the image within the article */
 	}
 
             .service-grid {
@@ -125,13 +125,10 @@
                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
             }
             .service-image {
-               
+        	width: 85%;
+                height: 212px;
+                object-fit: cover;
                 transition: transform 0.3s ease;
-		width: 85%;
-	        height: 245px;
-	        object-fit: cover;
-	        display: block;
-	        margin: 0 auto;
 	    }
             .service-card:hover .service-image {
                 transform: scale(1.05);
