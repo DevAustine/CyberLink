@@ -95,6 +95,15 @@
             .government-services {
                 padding: 4rem 0;
             }
+	    article img {
+    width: 245px;
+    height: 245px;
+    object-fit: contain; /* Ensures the image fits within the size without being distorted */
+    max-width: 100%; /* Ensures the image is responsive on smaller screens */
+    display: block; /* Prevents the image from behaving like inline elements */
+    margin: 0 auto; /* Centers the image within the article */
+}
+
             .service-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -118,8 +127,8 @@
             .service-image {
                
                 transition: transform 0.3s ease;
-		 width: 250px;
-    height: 250px;
+		 width: 245px;
+    height: 245px;
     object-fit: cover;
     display: block;
     margin: 0 auto;
