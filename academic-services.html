@@ -87,6 +87,38 @@
                 background-size: cover;
                 background-position: center;
             }
+	    .breadcrumb {
+	       padding: 0.5rem 0;
+	       margin-bottom: 1rem;
+	       font-size: 0.9rem;
+	    }
+	    .breadcrumb a {
+	    color: var(--primary-color);
+	    text-decoration: none;
+	}
+	.breadcrumb span {
+	    color: var(--dark-gray);
+	}
+	    .search-container {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+        }
+        .search-container input[type="text"] {
+            padding: 0.5rem;
+            width: 70%;
+            max-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+        .search-container button {
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
             .government-hero h2 {
                 font-size: 2.5rem;
                 margin-bottom: 1rem;
@@ -303,7 +335,7 @@
         </div>
     </header>
 	<div class="breadcrumb">
-     	   <a href="#home">Home</a> &gt; <span>Current Page</span>
+     	   <a href="index.html">Home</a> &gt; <span>Current Page</span>
         </div>
 
     <main>
@@ -315,6 +347,11 @@
             </div>
         </section>
 
+	        <div class="search-container">
+	            <input type="text" placeholder="Search services...">
+	            <button type="submit"><i class="fa fa-search"></i></button>
+	        </div>
+	    
         <section id="services" class="government-services">
             <div class="container">
                 <h2>Our Services</h2>
