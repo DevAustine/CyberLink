@@ -434,192 +434,196 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          
-		 // Navigation toggle
-                const navToggle = document.querySelector(".nav-toggle");
-                const mainNav = document.querySelector(".main-nav");
-                const closeBtn = document.querySelector(".close-btn");
+    	document.addEventListener('DOMContentLoaded', function() {
+    // Navigation toggle
+    const navToggle = document.querySelector(".nav-toggle");
+    const mainNav = document.querySelector(".main-nav");
+    const closeBtn = document.querySelector(".close-btn");
 
-                navToggle.addEventListener("click", function () {
-                    mainNav.classList.toggle("active");
-                });
+    navToggle.addEventListener("click", function () {
+        mainNav.classList.toggle("active");
+    });
 
-                closeBtn.addEventListener("click", function () {
-                    mainNav.classList.remove("active");
-                });
+    closeBtn.addEventListener("click", function () {
+        mainNav.classList.remove("active");
+    });
 
-                // Close navigation when a link is clicked (optional)
-                const navLinks = document.querySelectorAll(".main-nav ul li a");
-                navLinks.forEach((link) => {
-                    link.addEventListener("click", () => {
-                        mainNav.classList.remove("active");
-                    });
-                });
+    // Close navigation when a link is clicked
+    const navLinks = document.querySelectorAll(".main-nav ul li a");
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            mainNav.classList.remove("active");
+        });
+    });
 
-                // Service card click handler
-                const serviceCards = document.querySelectorAll(".service-card");
-                const serviceInfo = document.getElementById("serviceInfo");
+    // Service card click handler
+    const serviceCards = document.querySelectorAll(".service-card");
+    const serviceInfo = document.getElementById("serviceInfo");
 
-                const serviceDetails = {
-                    kra: {
-                        title: "KRA Services",
-                        description: "Our KRA services include assistance with tax returns, KRA PIN registration, and tax compliance certificates. We provide step-by-step guidance to ensure you meet all tax obligations efficiently.",
-                        requirements: ["National ID or Passport", "Recent digital passport-sized photo", "Proof of address (e.g., utility bill)"],
-                    },
-                    helb: {
-                        title: "HELB Applications",
-                        description:
-                            "We assist students in applying for HELB loans, checking application status, and managing repayments. Our team ensures that you complete all necessary forms accurately to increase your chances of approval.",
-                        requirements: ["National ID", "KCSE or high school leaving certificate", "Admission letter from your institution", "Parents'/Guardians' income details"],
-                    },
-                    ecitizen: {
-                        title: "eCitizen Services",
-                        description:
-                            "Access a wide range of government services online through eCitizen. We help with passport applications, driving license renewals, business registrations, and more, making the process smooth and hassle-free.",
-                        requirements: ["eCitizen account (we can help you create one)", "Relevant personal documents depending on the service", "Means of payment (M-Pesa, credit/debit card)"],
-                    },
-                    nhif: {
-                        title: "NHIF Services",
-                        description: "Register for NHIF, pay contributions, and manage your health insurance coverage with our assistance. We guide you through the process of choosing the right cover for you and your family.",
-                        requirements: ["National ID", "Recent passport-sized photo", "Proof of employment or self-employment", "Dependents' details (if applicable)"],
-                    },
-                };
+    const serviceDetails = {
+        university: {
+            title: "University Application",
+            description: "We assist with accurate and timely completion of local and international university applications, ensuring all documents are properly submitted.",
+            requirements: ["Academic transcripts", "Personal statement", "Letters of recommendation", "Application fee"],
+        },
+        KUCCPS: {
+            title: "KUCCPS Application",
+            description: "We help you navigate the KUCCPS application process, ensuring you make informed choices about your university placement.",
+            requirements: ["KCSE results slip", "National ID", "High school leaving certificate"],
+        },
+        HELB: {
+            title: "HELB Loan Applications",
+            description: "We guide you through the HELB loan application process to help you secure financial aid for your education.",
+            requirements: ["National ID", "KCSE certificate", "Admission letter", "Parents'/Guardians' income details"],
+        },
+        schorlaship: {
+            title: "Scholarship Applications",
+            description: "We assist with finding opportunities, completing application forms, and crafting compelling essays to enhance your chances of securing financial aid.",
+            requirements: ["Academic transcripts", "Personal statement", "Letters of recommendation", "Financial need documentation"],
+        },
+        "academic writing": {
+            title: "Academic Writing",
+            description: "We provide professional assistance with typing and formatting your thesis or research paper.",
+            requirements: ["Research notes", "Outline of the paper", "Citation style guide"],
+        },
+        "course registration": {
+            title: "Course Registration & Exam Booking",
+            description: "We help you efficiently register for courses and book exams with our hassle-free online services.",
+            requirements: ["Student ID", "List of desired courses", "Payment information"],
+        },
+        "Research assistance": {
+            title: "Virtual Research Assistance",
+            description: "Our Internet Research Assistance service will help you efficiently gather, verify, and organize relevant data for your projects.",
+            requirements: ["Research topic", "Specific research questions", "Preferred sources"],
+        },
+        "data entry": {
+            title: "Data Entry and Analysis Services",
+            description: "We provide accurate data entry and insightful analysis using SPSS and Excel services.",
+            requirements: ["Raw data", "Analysis requirements", "Preferred output format"],
+        },
+        "CV and Cover Letter Writing": {
+            title: "CV & Cover Letter Assistance",
+            description: "We create tailored professional CV and cover letter documents that highlight your skills and experience.",
+            requirements: ["Work history", "Educational background", "Skills and achievements"],
+        },
+    };
 
-                serviceCards.forEach((card) => {
-                    card.addEventListener("click", function (event) {
-                        // If the click is on the "Request Assistance" button, let it behave normally
-                        if (event.target.closest(".cta-button")) {
-                            return; // This allows the default link behavior
-                        }
+    serviceCards.forEach((card) => {
+        card.addEventListener("click", function (event) {
+            if (event.target.closest(".cta-button")) {
+                return;
+            }
+            event.preventDefault();
 
-                        // For clicks anywhere else on the card, prevent default behavior
-                        event.preventDefault();
+            const service = this.getAttribute("data-service");
+            const details = serviceDetails[service];
 
-                        const service = this.getAttribute("data-service");
-                        const details = serviceDetails[service];
+            if (details) {
+                serviceInfo.innerHTML = `
+                    <h3>${details.title}</h3>
+                    <p>${details.description}</p>
+                    <h4>Requirements:</h4>
+                    <ul>
+                        ${details.requirements.map((req) => `<li>${req}</li>`).join("")}
+                    </ul>
+                `;
+            }
+        });
+    });
 
-                        if (details) {
-                            serviceInfo.innerHTML = `
-                <h3>${details.title}</h3>
-                <p>${details.description}</p>
-                <h4>Requirements:</h4>
-                <ul>
-                    ${details.requirements.map((req) => `<li>${req}</li>`).join("")}
-                </ul>
-            `;
-                        }
-                    });
-                });
+    // FAQ Accordion functionality
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+        header.addEventListener('click', () => {
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
 
+    // Lazy loading for images
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
 
-            // New: Newsletter signup
-            const newsletterForm = document.getElementById('newsletter-form');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    // Here you would typically send the data to your server
-                    alert('Thank you for signing up for our newsletter!');
-                    this.reset();
+    if ("IntersectionObserver" in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute("loading");
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach((img) => imageObserver.observe(img));
+    } else {
+        lazyImages.forEach((img) => {
+            img.src = img.dataset.src;
+            img.removeAttribute("loading");
+        });
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: "smooth",
                 });
             }
-
-            // New: FAQ Accordion functionality
-            const accordionItems = document.querySelectorAll('.accordion-item');
-            accordionItems.forEach(item => {
-                const header = item.querySelector('.accordion-header');
-                const content = item.querySelector('.accordion-content');
-                header.addEventListener('click', () => {
-                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
-                });
-            });
-
-	 // Lazy loading for images
-                const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-
-                if ("IntersectionObserver" in window) {
-                    const imageObserver = new IntersectionObserver((entries, observer) => {
-                        entries.forEach((entry) => {
-                            if (entry.isIntersecting) {
-                                const img = entry.target;
-                                img.src = img.dataset.src;
-                                img.removeAttribute("loading");
-                                imageObserver.unobserve(img);
-                            }
-                        });
-                    });
-
-                    lazyImages.forEach((img) => imageObserver.observe(img));
-                } else {
-                    // Fallback for browsers that don't support IntersectionObserver
-                    lazyImages.forEach((img) => {
-                        img.src = img.dataset.src;
-                        img.removeAttribute("loading");
-                    });
-                }
-
-                // Smooth scrolling for anchor links
-                document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-                    anchor.addEventListener("click", function (e) {
-                        e.preventDefault();
-
-                        const target = document.querySelector(this.getAttribute("href"));
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: "smooth",
-                            });
-                        }
-                    });
-                });
-
-                // Performance optimization: Debounce function for scroll events
-                function debounce(func, wait = 20, immediate = true) {
-                    let timeout;
-                    return function () {
-                        const context = this,
-                            args = arguments;
-                        const later = function () {
-                            timeout = null;
-                            if (!immediate) func.apply(context, args);
-                        };
-                        const callNow = immediate && !timeout;
-                        clearTimeout(timeout);
-                        timeout = setTimeout(later, wait);
-                        if (callNow) func.apply(context, args);
-                    };
-                }
-
-                // Add a subtle parallax effect to the hero section
-                const hero = document.querySelector(".government-hero");
-                function parallaxEffect() {
-                    const scrolled = window.pageYOffset;
-                    const coords = "50% " + scrolled * 0.4 + "px";
-                    hero.style.backgroundPosition = coords;
-                }
-
-                window.addEventListener("scroll", debounce(parallaxEffect));
-
-                // Add animation to service cards when they come into view
-                const animateOnScroll = (entries, observer) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("animate");
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                };
-
-                const options = {
-                    root: null,
-                    rootMargin: "0px",
-                    threshold: 0.1,
-                };
-
-                const observer = new IntersectionObserver(animateOnScroll, options);
-                serviceCards.forEach((card) => observer.observe(card));
-            });           
-
         });
+    });
+
+    // Performance optimization: Debounce function for scroll events
+    function debounce(func, wait = 20, immediate = true) {
+        let timeout;
+        return function () {
+            const context = this,
+                args = arguments;
+            const later = function () {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            const callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    }
+
+    // Add a subtle parallax effect to the hero section
+    const hero = document.querySelector(".government-hero");
+    function parallaxEffect() {
+        const scrolled = window.pageYOffset;
+        const coords = "50% " + scrolled * 0.4 + "px";
+        hero.style.backgroundPosition = coords;
+    }
+
+    window.addEventListener("scroll", debounce(parallaxEffect));
+
+    // Add animation to service cards when they come into view
+    const animateOnScroll = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver(animateOnScroll, options);
+    serviceCards.forEach((card) => observer.observe(card));
+});
     </script>
 
     <!-- Added Google Analytics (replace UA-XXXXX-Y with your actual tracking ID) -->
