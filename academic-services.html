@@ -79,7 +79,7 @@
             .main-nav ul li a:hover {
                 color: var(--secondary-color);
             }
-            .government-hero {
+            .academic-hero {
                 background-color: #e1f5fe;
                 text-align: center;
                 padding: 5rem 0;
@@ -119,12 +119,12 @@
             border-radius: 0 5px 5px 0;
             cursor: pointer;
         }
-            .government-hero h2 {
+            .academic-hero h2 {
                 font-size: 2.5rem;
                 margin-bottom: 1rem;
                 color: var(--primary-color);
             }
-            .government-services {
+            .academic-services {
                 padding: 4rem 0;
             }
 	    article img {
@@ -405,7 +405,7 @@
         </div>
 
     <main>
-        <section class="hero government-hero">
+        <section class="hero academic-hero">
             <div class="container">
                 <h2>Academic Services</h2>
                 <p>Access essential Academic Services with ease at CyberLink Nairobi</p>
@@ -418,7 +418,7 @@
 	            <button type="submit"><i class="fa fa-search"></i></button>
 	        </div>
 	    
-        <section id="services" class="government-services">
+        <section id="services" class="academic-services">
             <div class="container">
                <!-- <h2>Our Services</h2>
                 <p>We offer a comprehensive range of academic services to support your educational journey.</p> -->
@@ -724,7 +724,7 @@
     }
 
     // Add a subtle parallax effect to the hero section
-    const hero = document.querySelector(".government-hero");
+    const hero = document.querySelector(".academic-hero");
     function parallaxEffect() {
         const scrolled = window.pageYOffset;
         const coords = "50% " + scrolled * 0.4 + "px";
