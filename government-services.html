@@ -178,6 +178,16 @@
             margin-bottom: 1rem;
         }
 
+        article img {
+            width: 250px;
+            height: 250px;
+            object-fit: contain; /* Ensures the image fits within the size without being distorted */
+            max-width: 100%; /* Ensures the image is responsive on smaller screens */
+            display: block; /* Prevents the image from behaving like inline elements */
+            margin: 0 auto; /* Centers the image within the article */
+        }
+
+
         /* Contact Section Styles */
         .contact {
             background-color: var(--background-color);
