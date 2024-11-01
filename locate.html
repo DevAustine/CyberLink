@@ -1,102 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get User Location</title>
-  <style>
-    /* CSS */
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f0f2f5;
-    }
+<html>
+<body onload="getLocation()">
+  <div style="width:100%;height:0;padding-bottom:178%;position:relative;"><iframe src="https://giphy.com/embed/8uifK66m5JBiGBKDHx" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/imariajohnsen-autumn-thanksgiving-november-8uifK66m5JBiGBKDHx">via GIPHY</a></p>
 
-    .container {
-      text-align: center;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      max-width: 400px;
-      width: 100%;
-    }
 
-    h1 {
-      color: #333;
-      margin-bottom: 20px;
-    }
+<p id="demo"></p>
 
-    #location {
-      margin-top: 20px;
-      font-size: 1.2em;
-      color: #555;
-    }
+<script>
+const x = document.getElementById("demo");
 
-    .btn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
 
-    .btn:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1 onload="getLocation()">Find Your Location</h1>
- 
-    <div id="location"></div>
-  </div>
-
-  <script>
-    // JavaScript for Getting Location
-    function getLocation() {
-      const locationDiv = document.getElementById('location');
-      locationDiv.textContent = "Fetching location...";
-
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-      } else {
-        locationDiv.textContent = "Geolocation is not supported by this browser.";
-      }
-    }
-
-    function showPosition(position) {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      document.getElementById('location').innerHTML = 
-        `<p>Latitude: ${latitude}</p><p>Longitude: ${longitude}</p>`;
-    }
-
-    function showError(error) {
-      const locationDiv = document.getElementById('location');
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          locationDiv.textContent = "User denied the request for Geolocation.";
-          break;
-        case error.POSITION_UNAVAILABLE:
-          locationDiv.textContent = "Location information is unavailable.";
-          break;
-        case error.TIMEOUT:
-          locationDiv.textContent = "The request to get user location timed out.";
-          break;
-        case error.UNKNOWN_ERROR:
-          locationDiv.textContent = "An unknown error occurred.";
-          break;
-      }
-    }
-  </script>
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>  
 </body>
 </html>
+
+
+
+
+
+
+
