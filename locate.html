@@ -59,43 +59,21 @@
     <div id="location"></div>
   </div>
 
-  <script>
-    // JavaScript for Getting Location
-    function getLocation() {
-      const locationDiv = document.getElementById('location');
-      locationDiv.textContent = "Fetching location...";
+<script>
+const x = document.getElementById("demo");
 
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-      } else {
-        locationDiv.textContent = "Geolocation is not supported by this browser.";
-      }
-    }
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
 
-    function showPosition(position) {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      document.getElementById('location').innerHTML = 
-        `<p>Latitude: ${latitude}</p><p>Longitude: ${longitude}</p>`;
-    }
-
-    function showError(error) {
-      const locationDiv = document.getElementById('location');
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          locationDiv.textContent = "User denied the request for Geolocation.";
-          break;
-        case error.POSITION_UNAVAILABLE:
-          locationDiv.textContent = "Location information is unavailable.";
-          break;
-        case error.TIMEOUT:
-          locationDiv.textContent = "The request to get user location timed out.";
-          break;
-        case error.UNKNOWN_ERROR:
-          locationDiv.textContent = "An unknown error occurred.";
-          break;
-      }
-    }
-  </script>
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
 </body>
 </html>
