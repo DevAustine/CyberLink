@@ -18,7 +18,7 @@ bot.on("text", (ctx) => {
         const userMessage = ctx.message.text;
         
         // Get WhatsApp number from .env
-        const whatsappNumber = process.env.WHATSAPP_NUMBER || "254114070477";
+        const whatsappNumber = process.env.WHATSAPP_NUMBER || "254110266010";
         
         // Generate a WhatsApp link with the user's message
         const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(userMessage)}`;
